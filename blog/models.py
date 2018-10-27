@@ -14,6 +14,9 @@ class Blog(models.Model):
     image = models.ImageField(upload_to='images/')
 
     objects = models.Manager()
+
+    def __str__(self):
+        return self.title
     
     def summary(self):
         return self.body[0:100]
